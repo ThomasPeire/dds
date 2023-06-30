@@ -1,5 +1,4 @@
-﻿using JasperFx.CodeGeneration;
-using Marten;
+﻿using Marten;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

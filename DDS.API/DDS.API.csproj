@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\modules\customers\DDS.Modules.Customers.Application\DDS.Modules.Customers.Application.csproj" />
+      <ProjectReference Include="..\modules\customers\DDS.Modules.Customers.Domain\DDS.Modules.Customers.Domain.csproj" />
     </ItemGroup>
 
 </Project>

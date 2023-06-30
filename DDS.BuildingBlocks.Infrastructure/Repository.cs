@@ -3,24 +3,24 @@ using Marten;
 
 namespace DDS.BuildingBlocks.Infrastructure;
 
-public sealed class Repository
+public class Repository : IRepository
 {
-    private readonly IDocumentStore store;
+    private readonly IDocumentSession _session;
 
-    public Repository(IDocumentStore store)
+    public Repository(IDocumentSession session)
     {
-        this.store = store;
+        _session = session;
     }
 
-    public async Task StoreAsync(AggregateRoot aggregate, CancellationToken ct = default)
+    public void AppendChanges(AggregateRoot aggregate)
     {
-        await using var session = await store.LightweightSerializableSessionAsync(token: ct);
-        // Take non-persisted events, push them to the event stream, indexed by the aggregate ID
-        var events = aggregate.GetUncommittedEvents().ToArray();
-        session.Events.Append(aggregate.Id, aggregate.Version, events);
-        await session.SaveChangesAsync(ct);
-        // Once successfully persisted, clear events from list of uncommitted events
-        aggregate.ClearUncommittedEvents();
+        var events = aggregate.GetDomainEvents().ToArray();
+        _session.Events.Append(aggregate.Id, aggregate.Version, events);
+    }
+
+    public async Task SaveChangesAsync(CancellationToken ct = default)
+    {
+        await _session.SaveChangesAsync(ct);
     }
 
     public async Task<T> LoadAsync<T>(
@@ -29,8 +29,7 @@ public sealed class Repository
         CancellationToken ct = default
     ) where T : AggregateRoot
     {
-        await using var session = await store.LightweightSerializableSessionAsync(token: ct);
-        var aggregate = await session.Events.AggregateStreamAsync<T>(id, version ?? 0, token: ct);
+        var aggregate = await _session.Events.AggregateStreamAsync<T>(id, version ?? 0, token: ct);
         return aggregate ?? throw new InvalidOperationException($"No aggregate by id {id}");
     }
 }

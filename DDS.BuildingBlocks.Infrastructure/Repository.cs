@@ -1,4 +1,5 @@
-﻿using DDS.BuildingBlocks.Domain;
+﻿using DDS.BuildingBlocks.Application;
+using DDS.BuildingBlocks.Domain;
 using Marten;
 
 namespace DDS.BuildingBlocks.Infrastructure;
@@ -24,12 +25,21 @@ public class Repository : IRepository
     }
 
     public async Task<T> LoadAsync<T>(
-        string id,
+        Guid id,
         int? version = null,
         CancellationToken ct = default
     ) where T : AggregateRoot
     {
         var aggregate = await _session.Events.AggregateStreamAsync<T>(id, version ?? 0, token: ct);
         return aggregate ?? throw new InvalidOperationException($"No aggregate by id {id}");
+    }
+    public async Task<T> LoadViewAsync<T>(
+        Guid id,
+        int? version = null,
+        CancellationToken ct = default
+    ) where T : class
+    {
+        var aggregate = await _session.Events.AggregateStreamAsync<T>(id, version ?? 0, token: ct);
+        return aggregate ?? throw new InvalidOperationException($"No stream by id {id}");
     }
 }

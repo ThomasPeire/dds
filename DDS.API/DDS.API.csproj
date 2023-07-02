@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.2.1" />
+        <PackageReference Include="HotChocolate.Stitching" Version="13.2.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
@@ -19,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\modules\customers\DDS.Modules.Customers.Application\DDS.Modules.Customers.Application.csproj" />
+      <ProjectReference Include="..\modules\customers\DDS.Modules.Customers.Configuration\DDS.Modules.Customers.Configuration.csproj" />
       <ProjectReference Include="..\modules\customers\DDS.Modules.Customers.Domain\DDS.Modules.Customers.Domain.csproj" />
     </ItemGroup>
 

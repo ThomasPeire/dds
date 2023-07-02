@@ -1,4 +1,6 @@
-﻿using Marten;
+﻿using DDS.Modules.Customers.Application.Projections;
+using Marten;
+using Marten.Events.Projections;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +15,9 @@ public static class CustomersStartup
             .AddMarten(options =>
             {
                 options.Connection(configuration.GetConnectionString("CustomerDB")!);
+                options.Projections.Add<CustomerViewProjection>(ProjectionLifecycle.Inline);
             })
+            .UseLightweightSessions()
             .OptimizeArtifactWorkflow();
 
         return services;

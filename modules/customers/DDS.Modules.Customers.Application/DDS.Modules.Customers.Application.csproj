@@ -7,12 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="HotChocolate.AspNetCore" Version="13.2.1" />
+      <PackageReference Include="HotChocolate.Execution" Version="13.2.1" />
+      <PackageReference Include="HotChocolate.Types" Version="13.2.1" />
+      <PackageReference Include="Marten" Version="6.0.2" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DDS.Modules.Customers.Infrastructure\DDS.Modules.Customers.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\..\DDS.BuildingBlocks.Application\DDS.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\DDS.Modules.Customers.Domain\DDS.Modules.Customers.Domain.csproj" />
     </ItemGroup>
 
 </Project>

@@ -32,6 +32,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDS.BuildingBlocks.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDS.BuildingBlocks.Infrastructure", "DDS.BuildingBlocks.Infrastructure\DDS.BuildingBlocks.Infrastructure.csproj", "{FC46D7BE-E14E-4D90-9A8C-88BEC69820B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDS.Modules.Customers.Configuration", "modules\customers\DDS.Modules.Customers.Configuration\DDS.Modules.Customers.Configuration.csproj", "{ED939651-5373-43E4-B648-CF09314215D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDS.BuildingBlocks.Application", "DDS.BuildingBlocks.Application\DDS.BuildingBlocks.Application.csproj", "{2A5C641E-038E-4EDC-9572-A733EA61BECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +70,14 @@ Global
 		{FC46D7BE-E14E-4D90-9A8C-88BEC69820B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC46D7BE-E14E-4D90-9A8C-88BEC69820B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC46D7BE-E14E-4D90-9A8C-88BEC69820B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED939651-5373-43E4-B648-CF09314215D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED939651-5373-43E4-B648-CF09314215D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED939651-5373-43E4-B648-CF09314215D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED939651-5373-43E4-B648-CF09314215D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5C641E-038E-4EDC-9572-A733EA61BECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5C641E-038E-4EDC-9572-A733EA61BECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5C641E-038E-4EDC-9572-A733EA61BECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5C641E-038E-4EDC-9572-A733EA61BECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D8F5A193-380A-47ED-A0E4-976AB0B5CC07} = {E266F66B-D9BA-49E6-98A4-458A7FCD0670}
@@ -77,5 +89,7 @@ Global
 		{B7923434-8324-4BA8-A046-13DDFBD8E82E} = {F9240A41-B7DE-4223-BC6E-87663F644023}
 		{24688593-F67B-401D-9609-144CF3CC1387} = {7BE7ADBB-C5ED-40EA-B147-28F1849A42A3}
 		{FC46D7BE-E14E-4D90-9A8C-88BEC69820B9} = {7BE7ADBB-C5ED-40EA-B147-28F1849A42A3}
+		{ED939651-5373-43E4-B648-CF09314215D2} = {F9240A41-B7DE-4223-BC6E-87663F644023}
+		{2A5C641E-038E-4EDC-9572-A733EA61BECF} = {7BE7ADBB-C5ED-40EA-B147-28F1849A42A3}
 	EndGlobalSection
 EndGlobal

@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DDS.BuildingBlocks.Application\DDS.BuildingBlocks.Application.csproj" />
       <ProjectReference Include="..\DDS.BuildingBlocks.Domain\DDS.BuildingBlocks.Domain.csproj" />
     </ItemGroup>
 

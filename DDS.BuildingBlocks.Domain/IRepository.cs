@@ -6,8 +6,14 @@ public interface IRepository
     Task SaveChangesAsync(CancellationToken ct = default);
 
     Task<T> LoadAsync<T>(
-        string id,
+        Guid id,
         int? version = null,
         CancellationToken ct = default
     ) where T : AggregateRoot;
+
+    Task<T> LoadViewAsync<T>(
+        Guid id,
+        int? version = null,
+        CancellationToken ct = default
+    ) where T : class;
 }

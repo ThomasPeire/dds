@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\DDS.BuildingBlocks.Infrastructure\DDS.BuildingBlocks.Infrastructure.csproj" />
+      <ProjectReference Include="..\DDS.Modules.Customers.Application\DDS.Modules.Customers.Application.csproj" />
       <ProjectReference Include="..\DDS.Modules.Customers.Domain\DDS.Modules.Customers.Domain.csproj" />
     </ItemGroup>
 
